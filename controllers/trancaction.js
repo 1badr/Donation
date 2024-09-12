@@ -1,13 +1,11 @@
 const { MongoClient } = require('mongodb');
 const mongoose = require('mongoose');
 const mongoosastic = require('mongoosastic');
-const Donation = require('../models/DonationModel'); // تأكد من مسار الموديل
-const axios = require('axios'); // تأكد من استيراد axios هنا
+const Donation = require('../models/DonationModel'); 
+const axios = require('axios'); 
 const https = require('https');
 
-// دالة لإجراء الدفع وتخزين التبرع
 
-// دالة لجلب البيانات
 async function processDonation() {
   const options = {
     method: 'GET',
@@ -21,13 +19,12 @@ async function processDonation() {
 
   try {
     const response = await axios.request(options);
-    console.log('Response:', response.data); // طباعة البيانات المستجابة
+    console.log('Response:', response.data); 
   } catch (error) {
-    console.error('Error:', error); // التعامل مع الأخطاء
+    console.error('Error:', error);
   }
 }
 
-// استدعاء الدالة لجلب البيانات
 module.exports = {
     processDonation
 }
